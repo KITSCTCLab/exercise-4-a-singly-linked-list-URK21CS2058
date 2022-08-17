@@ -9,12 +9,12 @@ class Node:
  -> next - link to next node
  """
 
- def __init__(self, data=None, next=None):
+  def __init__(self, data=None, next=None):
  """
  Initialises the Node with given attributes
  """
- self.data = data
- self.next = next
+   self.data = data
+   self.next = next
 
 
 class LinkedList:
@@ -27,36 +27,36 @@ class LinkedList:
  -> self.head - contains first node of LinkedList, None if list empty
  """
 
- def __init__(self):
+  def __init__(self):
  """
  Initialize the head
  """
- self.head = None
+   self.head = None
 
- def insert_at_end(self, data):
+  def insert_at_end(self, data):
  """
  Insert node at end of the list
  :param data: integer data that will be used to create a node
  """
- new = Node(data, None)
- current = self.head
- if current is None:
- self.head = new
- else:
- while current.next is not None:
- current = current.next
- current.next = new
+   new = Node(data, None)
+   current = self.head
+   if current is None:
+   self.head = new
+   else:
+   while current.next is not None:
+   current = current.next
+   current.next = new
 
- def status(self):
+  def status(self):
  """
  It prints all the elements of list.
  """
- elements = []
- current = self.head
- while current:
- elements.append(current.data)
- current = current.next
- print(elements)
+   elements = []
+   current = self.head
+   while current:
+   elements.append(current.data)
+   current = current.next
+   print(elements)
 
 
 class Solution:
@@ -65,32 +65,32 @@ class Solution:
  
  """
 
- def addTwoNumbers(self, first_list: Optional[LinkedList], second_list: Optional[LinkedList]) -> Optional[
+  def addTwoNumbers(self, first_list: Optional[LinkedList], second_list: Optional[LinkedList]) -> Optional[
  LinkedList]:
  """
  :param first_list: Linkedlist with non-negative integers
  :param second_list: Linkedlist with non-negative integers
  :return: returns the sum as a linked list
  """
- result = self.get_num(first_list) + self.get_num(second_list)
- sum_list = LinkedList()
- for digit in list(map(int, str(result)[::-1])):
- sum_list.insert_at_end(digit)
- return sum_list
+   result = self.get_num(first_list) + self.get_num(second_list)
+   sum_list = LinkedList()
+   for digit in list(map(int, str(result)[::-1])):
+   sum_list.insert_at_end(digit)
+   return sum_list
 
- def get_num(self, l: Optional[LinkedList]) -> int:
+  def get_num(self, l: Optional[LinkedList]) -> int:
  """
  :param l: LinkedList with non-negative integers
  :return: returns digits of the list as a single integer
  """
- curr = l.head
- if curr is None:
- return 0
- num = ""
- while curr is not None:
- num = str(curr.data) + num
- curr = curr.next
- return int(num)
+   curr = l.head
+   if curr is None:
+   return 0
+   num = ""
+   while curr is not None:
+   num = str(curr.data) + num
+   curr = curr.next
+   return int(num)
 
 
 # Do not edit the following code
