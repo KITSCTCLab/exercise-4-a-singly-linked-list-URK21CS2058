@@ -126,4 +126,4 @@ for data in data_for_second_list:
     second_list.insert_at_end(data)
 # Create an instance for Solution
 solution = Solution()
-# Pass first_list and second_list to addTwoNumbers, which returns a new linked list
+# Pass first_list and second_list to addTwoNumbers, which returns a new linked lis
